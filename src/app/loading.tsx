@@ -1,9 +1,7 @@
+import Loader from "@/components/ui/Loader";
+
 const Loading = () => {
-  return (
-    <div>
-      <h1>Loading...!</h1>
-    </div>
-  );
+  return <Loader />;
 };
 
 export default Loading;

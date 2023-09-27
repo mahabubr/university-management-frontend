@@ -3,3 +3,19 @@ export interface iMeta {
   page: number;
   size: number;
 }
+
+export type ResponseSuccessType = {
+  data: any;
+  meta?: iMeta;
+};
+
+export type ResponseErrorType = {
+  statusCode?: number;
+  message?: string;
+  errorMessages?: IResponseErrorMessage[];
+};
+
+export type IResponseErrorMessage = {
+  path: string | number;
+  message: string;
+};
