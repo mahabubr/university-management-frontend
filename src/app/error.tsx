@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
 const ErrorPage = () => {
   return (
-    <div>
+    <div style={{ display: "grid", placeItems: "center", height: "100vh" }}>
       <h1>Something went Wrong!!</h1>
     </div>
   );
