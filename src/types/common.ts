@@ -1,7 +1,7 @@
 export interface iMeta {
   limit: number;
   page: number;
-  size: number;
+  total: number;
 }
 
 export type ResponseSuccessType = {
@@ -19,3 +19,11 @@ export type IResponseErrorMessage = {
   path: string | number;
   message: string;
 };
+
+export interface IDepartments {
+  id: string;
+  title: string;
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
+}
