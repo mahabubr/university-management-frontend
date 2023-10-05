@@ -1,6 +1,7 @@
 import { DatePicker, DatePickerProps, Input } from "antd";
 import { Controller, useFormContext } from "react-hook-form";
 import dayjs, { Dayjs } from "dayjs";
+import { getErrorMessageByPropertyName } from "@/utils/schema.validator";
 
 type UMDatePickerProps = {
   onChange?: (valOne: Dayjs | null, valTwo: string) => void;
@@ -11,12 +12,18 @@ type UMDatePickerProps = {
 };
 
 const FormDatePicker = ({ name, label, onChange, size }: UMDatePickerProps) => {
-  const { control, setValue } = useFormContext();
+  const {
+    control,
+    setValue,
+    formState: { errors },
+  } = useFormContext();
 
   const handleOnChange: DatePickerProps["onChange"] = (date, dateString) => {
     onChange ? onChange(date, dateString) : null;
     setValue(name, dateString);
   };
+
+  const errorMessage = getErrorMessageByPropertyName(errors, name);
 
   return (
     <div>
@@ -35,6 +42,7 @@ const FormDatePicker = ({ name, label, onChange, size }: UMDatePickerProps) => {
           />
         )}
       />
+      <small style={{ color: "red", marginTop: 2 }}>{errorMessage}</small>
     </div>
   );
 };

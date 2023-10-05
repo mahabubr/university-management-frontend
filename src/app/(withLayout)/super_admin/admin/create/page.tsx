@@ -28,20 +28,20 @@ const CreateAdmin = () => {
   });
 
   const onSubmit = async (values: any) => {
-    // const obj = { ...values };
-    // const file = obj["file"];
-    // delete obj["file"];
-    console.log(values);
-    // const data = JSON.stringify(obj);
+    const obj = { ...values };
+    const file = obj["file"];
+    delete obj["file"];
+    console.log(obj);
+    const data = JSON.stringify(obj);
 
-    // const formData = new FormData();
-    // formData.append("file", file as Blob);
-    // formData.append("data", data);
+    const formData = new FormData();
+    formData.append("file", file as Blob);
+    formData.append("data", data);
 
     message.loading("Creating...");
 
     try {
-      // await addAdminWithFormData(formData);
+      await addAdminWithFormData(formData);
 
       message.success("Admin created successfully");
     } catch (error) {
@@ -156,7 +156,7 @@ const CreateAdmin = () => {
                 span={8}
                 style={{ marginBottom: "10px" }}
               >
-                {/* <UploadImage name="file" /> */}
+                <UploadImage name="file" />
               </Col>
             </Row>
           </div>
