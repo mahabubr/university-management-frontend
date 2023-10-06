@@ -3,12 +3,7 @@
 import { Col, Row } from "antd";
 import FormInput from "../Forms/FormInput";
 import FormSelectField from "../Forms/FormSelectField";
-import {
-  acDepartmentOptions,
-  acSemesterOptions,
-  facultyOptions,
-  genderOptions,
-} from "@/constants/global";
+import { genderOptions } from "@/constants/global";
 import UploadImage from "../ui/UploadImage";
 import ACDepartmentField from "../Forms/ACDepartmentField";
 import ACFacultyField from "../Forms/ACFacultyField";

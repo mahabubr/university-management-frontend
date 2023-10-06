@@ -69,6 +69,7 @@ const CreateStudentPage = () => {
       />
       <h1>Create Student</h1>
       <StepperFrom
+        persistKey="student-create-form"
         submitHandler={(value) => handleStudentSubmit(value)}
         steps={steps}
       />
